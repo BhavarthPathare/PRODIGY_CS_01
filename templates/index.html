@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>✨ Caesar Cipher Tool</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>🔐 Caesar Cipher</h2>
+    <form method="POST">
+      <label>📝 Message:</label>
+      <textarea name="message" rows="4" required></textarea>
+
+      <label>🎯 Shift Value:</label>
+      <input type="number" name="shift" value="3" required />
+
+      <div class="radio-group">
+        <label><input type="radio" name="mode" value="encrypt" checked /> 🔒 Encrypt</label>
+        <label><input type="radio" name="mode" value="decrypt" /> 🔓 Decrypt</label>
+      </div>
+
+      <button type="submit">🚀 Process</button>
+    </form>
+
+    {% if result %}
+      <div class="result-box">
+        <label>✅ Result:</label>
+        <input id="resultText" type="text" value="{{ result }}" readonly />
+        <button onclick="copyToClipboard()">📋 Copy</button>
+      </div>
+    {% endif %}
+  </div>
+
+  <script>
+    function copyToClipboard() {
+      const resultField = document.getElementById("resultText");
+      resultField.select();
+      resultField.setSelectionRange(0, 99999); // For mobile
+      document.execCommand("copy");
+      alert("Result copied to clipboard! ✅");
+    }
+  </script>
+</body>
+</html>

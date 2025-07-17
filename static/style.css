@@ -1,0 +1,93 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  color: #333;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  width: 420px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+h2 {
+  text-align: center;
+  color: #4a00e0;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 12px;
+  display: block;
+}
+
+textarea, input[type="number"], input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-top: 6px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.radio-group {
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+button {
+  background-color: #4a00e0;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #5f27cd;
+}
+
+.result-box {
+  margin-top: 20px;
+  background: #f0f0ff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.result-box input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #2d3436;
+  background-color: #e0e8ff;
+  border: none;
+  text-align: center;
+}
+
+.result-box button {
+  background-color: #00b894;
+}
+
+.result-box button:hover {
+  background-color: #00cec9;
+}
