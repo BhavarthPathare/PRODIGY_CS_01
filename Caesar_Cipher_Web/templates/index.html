@@ -1,44 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>✨ Caesar Cipher Tool</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Caesar Cipher - Hacker UI</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <div class="container">
-    <h2>🔐 Caesar Cipher</h2>
-    <form method="POST">
-      <label>📝 Message:</label>
-      <textarea name="message" rows="4" required></textarea>
+    <h1>Caesar Cipher</h1>
+    <form method="post">
+      <label for="text">Enter Text:</label>
+      <textarea name="message" required rows="3">{{ text or '' }}</textarea>
 
-      <label>🎯 Shift Value:</label>
-      <input type="number" name="shift" value="3" required />
+      <label for="shift">Enter Shift Value (Integer):</label>
+      <input type="number" name="shift" required value="{{ shift or '' }}"/>
 
-      <div class="radio-group">
-        <label><input type="radio" name="mode" value="encrypt" checked /> 🔒 Encrypt</label>
-        <label><input type="radio" name="mode" value="decrypt" /> 🔓 Decrypt</label>
-      </div>
+      <label for="mode">Mode:</label>
+      <select name="mode" required>
+        <option value="encrypt" {% if mode=='encrypt' %}selected{% endif %}>Encrypt</option>
+        <option value="decrypt" {% if mode=='decrypt' %}selected{% endif %}>Decrypt</option>
+      </select>
 
-      <button type="submit">🚀 Process</button>
+      <button type="submit">Process</button>
     </form>
 
     {% if result %}
-      <div class="result-box">
-        <label>✅ Result:</label>
-        <input id="resultText" type="text" value="{{ result }}" readonly />
-        <button onclick="copyToClipboard()">📋 Copy</button>
-      </div>
+    <div class="result">
+      <strong>Result:</strong>
+      <p id="resultText">{{ result }}</p>
+      <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    </div>
     {% endif %}
   </div>
 
   <script>
     function copyToClipboard() {
-      const resultField = document.getElementById("resultText");
-      resultField.select();
-      resultField.setSelectionRange(0, 99999); // For mobile
-      document.execCommand("copy");
-      alert("Result copied to clipboard! ✅");
+      const text = document.getElementById("resultText").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Copied to clipboard!");
+      });
     }
   </script>
 </body>
