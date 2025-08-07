@@ -7,9 +7,16 @@ PRODIGY_CS_01/
 ├── static/
 
 │   └── style.css         # Styling for the app
+
 │
+
 ├── templates/
+
 │   └── index.html        # HTML form and result display
+
 │
+
 ├── app.py                # Main Flask application
+
 └── README.md             # Project description
+
