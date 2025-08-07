@@ -3,7 +3,9 @@
 
 PRODIGY_CS_01/
 │
+
 ├── static/
+
 │   └── style.css         # Styling for the app
 │
 ├── templates/
