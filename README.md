@@ -3,19 +3,12 @@
 
 PRODIGY_CS_01/
 │<br>
-├── static/
-
-│   └── style.css         # Styling for the app
-
-│
-
-├── templates/
-
-│   └── index.html        # HTML form and result display
-
-│
-
-├── app.py                # Main Flask application
-
+├── static/<br>
+│   └── style.css         # Styling for the app<br>
+│<br>
+├── templates/<br>
+│   └── index.html        # HTML form and result display<br>
+│<br>
+├── app.py                # Main Flask application<br>
 └── README.md             # Project description
 
